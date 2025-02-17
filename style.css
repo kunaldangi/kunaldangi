@@ -67,6 +67,29 @@ body{
     border-radius: 50px;
 }
 
+#id-audio {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+
+    width: 55px;
+    height: 55px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+    border-radius: 100%;
+    background: rgba(242, 242, 242, 0.65);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+#id-audio svg{
+    width: 30px;
+    height: 30px;
+}
+
 .sections {
     position: relative;
     top: 40%;
@@ -119,7 +142,47 @@ body{
     gap: 250px;
 }
 
-.home__profile img{
-    width: 100px;
-    height: 100px;
+.home__content--info {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
 }
+
+.content__greet {
+    font-size: 28px;
+    color: #255471;
+}
+
+.content__name {
+    margin-top: -10px;
+    font-size: 30px;
+    color: #255471;
+    font-weight: 600;
+}
+
+.content__title {
+    color: #576B77;
+    font-weight: 300;
+}
+
+.content__icons {
+    margin-top: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.content__icon svg{
+    width: 30px;
+    height: 30px;
+}
+
+.home__profile img{
+    width: 125px;
+    height: 125px;
+
+    border-radius: 100%;
+    border: 3px solid #274659;
+    box-shadow: 4px 9px 40px 4px rgba(39, 70, 89, 0.6);
+}
+
