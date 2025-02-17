@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Kunal Dangi</title>
+</head>
+<body>
+    <div class="main">
+        <div class="nav">
+            <div class="nav__item">Home</div>
+            <div class="nav__item">Skills</div>
+            <div class="nav__item">Projects</div>
+            <div class="nav__item">Certificates</div>
+        </div>
+
+        <button id="id-audio__play" onclick="playAudio()">Play</button>
+        <button id="id-audio__pause" onclick="pauseAudio()">Pause</button>
+
+        <div class="sections">
+            <div class="section__item" id="id-home">
+                <div class="home__content">
+                    <div class="home__content__item">
+                        <div>Hi! I’m</div>
+                        <div>Kunal Dangi</div>
+                        <div>A passionate computer science enthusiast.</div>
+                    </div>
+                </div>
+                <div class="home__profile">
+                    <img src="imgs/profile.png" alt="Kunal Dangi">
+                </div>
+            </div>
+            <div class="section__item" id="id-skills"></div>
+            <div class="section__item" id="id-projects"></div>
+            <div class="section__item" id="id-certificates"></div>
+        </div>
+    </div>
+    <div class="bg-img"></div>
+    <canvas id="snowCanvas"></canvas>
+    <audio id="myAudio">
+        <source src="audio/snowfall.m4a" type="audio/mpeg">
+    </audio>
+    
+    <script src="snowfall.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

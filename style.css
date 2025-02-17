@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px */
+}
+
+
+body{
+    font-family: 'Inter';
+    font-size: 1.6rem;
+    background-color: #F6F6F6;
+    color: #333;
+
+    user-select: none;
+}
+
+.bg-img {
+    height: 100vh;
+    width: 100vw;
+    
+    /*  need big resolution image for higher resolution screens
+        if crossed over the image size (resolution)
+    */
+    background: url('imgs/background.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(4px);    
+}
+
+#snowCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.main {
+    height: 100vh;
+    width: 100vw;
+    
+    position: absolute;
+    z-index: 100;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav {
+    margin-top: 30px;
+
+    width: 450px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    
+    font-size: 1.4rem;
+    color: #255471;
+    background-color: hsla(0, 0%, 95%, 0.75);
+    border-radius: 50px;
+}
+
+.sections {
+    position: relative;
+    top: 40%;
+    transform: translateY(-50%);    
+
+    height: 500px;
+    width: 900px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    padding-right: 3px;
+    overflow: auto;
+}
+
+.sections::-webkit-scrollbar { /* Target the entire scrollbar */
+    width: 4px;
+    height: 4px;
+}
+
+.sections::-webkit-scrollbar-thumb { /* The scrollbar thumb (the draggable part) */
+    background: #376580;
+    border-radius: 7px;
+}
+
+.sections::-webkit-scrollbar-track { /* The scrollbar track (the area behind the thumb) */
+    background: #F2F2F2; /* Light gray background */
+    border-radius: 10px;
+}
+
+.sections::-webkit-scrollbar-thumb:hover { /* Change thumb color on hover */
+    background: hsla(202, 40%, 36%, 0.6);
+}
+
+.section__item{
+    flex-shrink: 0;
+
+    height: 500px;
+    width: 100%;
+    
+    border-radius: 30px;
+    background-color: hsla(0, 0%, 95%, 0.60);
+}
+
+#id-home{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 250px;
+}
+
+.home__profile img{
+    width: 100px;
+    height: 100px;
+}
