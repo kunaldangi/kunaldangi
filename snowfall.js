@@ -50,20 +50,51 @@ function animate() {
 
 createSnowflakes();
 animate();
+let autoplayBlocked = false;
 
 window.addEventListener("resize", () => {
     location.reload(); // Reloads the page on window resize in order to reinitialize the canvas size (height and width)
+    autoplayBlocked = false; // Reset the autoplayBlocked flag
+    document.getElementById("id-audio--play").style.display = "none";
+    document.getElementById("id-audio--pause").style.display = "block";
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    audio.play();
+    audio.play().catch((error) => {
+        console.log("Autoplay failed:", error);
+        autoplayBlocked = true;
+        document.getElementById("id-audio--play").style.display = "none";
+        document.getElementById("id-audio--pause").style.display = "block";
+    });
+    
+    // Listen for user interaction
+    document.addEventListener("click", () => playAfterInteraction("click"));
+    document.addEventListener("keydown", () => playAfterInteraction("keydown"));
+    document.addEventListener("touchstart", () => playAfterInteraction("touchstart"));
 });
 
-
 function playAudio() {
-    audio.play();
+    if (audio.paused) {
+        audio.play();
+        document.getElementById("id-audio--play").style.display = "block";
+        document.getElementById("id-audio--pause").style.display = "none";
+    }
+    else {
+        audio.pause();
+        document.getElementById("id-audio--play").style.display = "none";
+        document.getElementById("id-audio--pause").style.display = "block";
+    }
 }
 
-function pauseAudio() {
-    audio.pause();
+
+function playAfterInteraction(event) {
+    if (autoplayBlocked) {
+        autoplayBlocked = false;
+        playAudio();
+    }
+
+    // Remove listeners once triggered
+    document.removeEventListener("click", playAfterInteraction);
+    document.removeEventListener("keydown", playAfterInteraction);
+    document.removeEventListener("touchstart", playAfterInteraction);
 }
