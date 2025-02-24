@@ -304,7 +304,7 @@ body {
 }
 
 .project__link button {
-    padding: 5px 20px;
+    padding: 5px 17px;
 
     display: flex;
     align-items: center;
@@ -329,4 +329,56 @@ body {
 .project__stack svg {
     height: 28px;
     width: 28px;
+}
+
+.certificate__item {
+    width: 400px;
+    padding: 25px 40px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    border: 2px solid rgba(19, 47, 64, 0.75);
+    box-shadow: 1px 1px 7px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 11px;
+}
+
+.certificate__title {
+    font-weight: 600;
+    font-size: 24px;
+
+    color: #255471;
+}
+
+.certificate__info {
+    font-size: 15px;
+    color: #576B77;
+}
+
+.certificate__info span {
+    font-weight: 600;
+}
+
+.certificate__link {
+    display: flex;
+    justify-content: center;
+}
+
+.certificate__item button {
+    padding: 5px 17px;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    color: #F2F2F2;
+    background: #306585;
+    border: none;
+    border-radius: 45px;
+}
+
+.certificate__item button svg {
+    width: 18px;
+    height: 18px;
 }
