@@ -276,6 +276,10 @@ body {
     justify-content: space-between;
 }
 
+.project__desc > div:last-child {
+    align-items: center;
+}
+
 .project__title {
     font-weight: 600;
     font-size: 22px;
@@ -303,17 +307,17 @@ body {
     gap: 15px;
 }
 
-.project__link button {
-    padding: 5px 17px;
+.project__link a {
+    height: 32px;
+    padding: 6px 17px;
 
     display: flex;
-    align-items: center;
-    justify-content: center;
     gap: 5px;
 
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
+    font-size: 1.4rem;
 
     color: #F2F2F2;
     background: #306585;
@@ -324,6 +328,12 @@ body {
 .project__link--icon svg {
     width: 18px;
     height: 18px;
+}
+
+.project__stack {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .project__stack svg {
