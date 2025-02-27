@@ -343,6 +343,7 @@ body {
 }
 
 .certificate__item {
+    margin-bottom: 25px;
     width: 400px;
     padding: 25px 40px;
 
@@ -376,20 +377,22 @@ body {
     justify-content: center;
 }
 
-.certificate__item button {
+.certificate__item a {
     padding: 5px 17px;
 
     display: flex;
-    align-items: center;
     gap: 5px;
 
     color: #F2F2F2;
     background: #306585;
     border: none;
     border-radius: 45px;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: 500;
 }
 
-.certificate__item button svg {
+.certificate__item a svg {
     width: 18px;
     height: 18px;
 }
