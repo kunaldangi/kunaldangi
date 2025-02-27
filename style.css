@@ -314,6 +314,7 @@ body {
     display: flex;
     gap: 5px;
 
+    text-decoration: none;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
