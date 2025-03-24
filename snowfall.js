@@ -67,10 +67,10 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById("id-audio--pause").style.display = "block";
     });
     
-    // Listen for user interaction
-    document.addEventListener("click", () => playAfterInteraction("click"));
-    document.addEventListener("keydown", () => playAfterInteraction("keydown"));
-    document.addEventListener("touchstart", () => playAfterInteraction("touchstart"));
+    // Listen for user interaction (Disable Audio! at interaction)
+    // document.addEventListener("click", () => playAfterInteraction("click"));
+    // document.addEventListener("keydown", () => playAfterInteraction("keydown"));
+    // document.addEventListener("touchstart", () => playAfterInteraction("touchstart"));
 });
 
 function playAudio() {
