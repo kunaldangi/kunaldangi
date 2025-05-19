@@ -1,0 +1,36 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup SSH Key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.EC2_SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy to EC2
+        run: |
+          ssh ec2-user@${{ secrets.EC2_HOST }} << 'EOF'
+            cd /home/ec2-user/kunaldangi
+            git pull origin main
+
+            sudo systemctl restart portfolio || {
+              echo "Service failed to restart! Fetching logs..."
+              sudo systemctl status portfolio --no-pager --lines=20
+              sudo journalctl -u portfolio --no-pager --lines=50
+              exit 1
+            }
+            echo "Service restarted successfully!"
+          EOF
