@@ -24,7 +24,6 @@ jobs:
         run: |
           ssh ec2-user@${{ secrets.EC2_HOST }} << 'EOF'
             cd /home/ec2-user/kunaldangi
-            git config --global --add safe.directory /home/ec2-user/kunaldangi
             git pull origin main
 
             sudo systemctl restart portfolio || {
