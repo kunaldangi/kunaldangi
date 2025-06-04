@@ -66,6 +66,16 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById("id-audio--play").style.display = "none";
         document.getElementById("id-audio--pause").style.display = "block";
     });
+
+    if(audio.paused) {
+        document.getElementById("id-audio--play").style.display = "none";
+        document.getElementById("id-audio--pause").style.display = "block";
+    }
+    else {
+        document.getElementById("id-audio--play").style.display = "block";
+        document.getElementById("id-audio--pause").style.display = "none";
+    }
+
     
     // Listen for user interaction (Disable Audio! at interaction)
     // document.addEventListener("click", () => playAfterInteraction("click"));
